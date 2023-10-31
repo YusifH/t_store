@@ -10,9 +10,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  http:
+  intl:
+  logger:
+  url_launcher:
+  flutter_native_splash:
   iconsax:
+  smooth_page_indicator:
   cupertino_icons: ^1.0.2
+  get:
+  get_storage:
 
 dev_dependencies:
   flutter_test:
