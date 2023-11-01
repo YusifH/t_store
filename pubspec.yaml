@@ -16,7 +16,7 @@ dependencies:
   url_launcher:
   flutter_native_splash:
   iconsax:
-  smooth_page_indicator:
+  smooth_page_indicator: 1.1.0
   cupertino_icons: ^1.0.2
   get:
   get_storage:
@@ -32,7 +32,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    - assets/images/
+    - assets/icons/
+    - assets/logos/
 
 
   # To add custom fonts to your application, add a fonts section here,
