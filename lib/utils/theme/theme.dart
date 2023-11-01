@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/theme/custom_themes/elevated_button_theme.dart';
+import 'package:t_store/utils/theme/custom_themes/outlined_button_theme.dart';
 import 'package:t_store/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:t_store/utils/theme/custom_themes/text_theme.dart';
 
@@ -13,7 +14,8 @@ class TAppTheme{
     scaffoldBackgroundColor: Colors.white,
     textTheme: TAppTextTheme.lightTextTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-    elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme
+    elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
+    outlinedButtonTheme: TOutlinedButtonTheme.lightOutlineButtonTheme
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -22,6 +24,7 @@ class TAppTheme{
       primaryColor: Colors.blue,
       scaffoldBackgroundColor: Colors.black,
       textTheme: TAppTextTheme.darkTextTheme,
-      elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme
+      elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
+      outlinedButtonTheme: TOutlinedButtonTheme.darkOutlineButtonTheme
   );
 }
