@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/authentication/screens/signup/signup.dart';
+import 'package:t_store/features/shop/screens/home/home.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
 import '../../../../../utils/constants/helper_function.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text.dart';
+import '../login.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -54,7 +57,12 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text(TTexts.signIn)),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  }, child: const Text(TTexts.signIn)),
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
 
@@ -62,8 +70,13 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                  onPressed: () {},
-                  child: Text(TTexts.createAccount, style: TextStyle(color: dark ? TColors.white : TColors.dark),)),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                    );
+                  },
+                  child: Text(TTexts.createAccount, style: TextStyle(color: dark ? TColors.white : TColors.black),)),
             ),
           ],
         ),
