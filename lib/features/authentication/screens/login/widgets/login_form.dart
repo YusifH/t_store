@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/authentication/screens/signup/signup.dart';
 import 'package:t_store/features/shop/screens/home/home.dart';
+import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
 import '../../../../../utils/constants/helper_function.dart';
@@ -60,7 +61,7 @@ class LoginForm extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(builder: (context) => const NavigationMenu()),
                     );
                   }, child: const Text(TTexts.signIn)),
             ),
