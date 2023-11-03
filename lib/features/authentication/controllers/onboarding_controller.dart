@@ -9,17 +9,17 @@ class OnBoardingController extends GetxController{
   Rx<int> currentPageIndex = 0.obs;
 
   void updatePageIndicator(index){
-    currentPageIndex = index;
+    currentPageIndex.value = index;
   }
 
   void dotNavigationClick(index){
-    currentPageIndex = index;
+    currentPageIndex.value = index;
     pageController.jumpTo(index);
   }
 
   void nextPage(){
     if(currentPageIndex.value == 2 ){
-      Get.off(const LoginScreen());
+      Get.to(const LoginScreen());
     }else{
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
