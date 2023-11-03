@@ -36,4 +36,8 @@ class TTexts{
   static const String loginTitle = 'Welcome back';
   static const String loginSubtitle = 'Discover Limitless Choices and Unmatched Convenience';
   static const String signupTitle = "Let's create your account";
+
+  /// Home App Bar
+  static const String homeAppBarTitle = 'Good day for shopping';
+  static const String homeAppBarSubtitle = 'Yusif Hajiyev';
 }
