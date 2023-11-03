@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/authentication/screens/login/login.dart';
-import 'package:t_store/features/shop/screens/home/home.dart';
+import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/text.dart';
-
 import '../../../../utils/constants/sizes.dart';
 import '../login/widgets/login_footer.dart';
 import '../login/widgets/login_social_buttons.dart';
@@ -140,7 +138,7 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () => Get.to(const HomePage()), child: const Text('Sign Up')),
+                        onPressed: () => Get.to(const NavigationMenu()), child: const Text('Sign Up')),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems,),
                   /// Divider
