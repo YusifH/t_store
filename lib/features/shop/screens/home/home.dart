@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:t_store/common/widgets/appbar/appbar.dart';
+import 'package:t_store/features/shop/screens/home/widgets/cart_counter_icon.dart';
+import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/utils/constants/colors.dart';
-
-import '../../../../common/widgets/circular_container.dart';
-import '../../../../common/widgets/curved_edges_widgets.dart';
+import 'package:t_store/utils/constants/text.dart';
 import '../../../../common/widgets/primary_header_container.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +19,7 @@ class HomePage extends StatelessWidget {
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-
+                  HomeAppBar()
                 ],
               ),
             ),
@@ -27,7 +29,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
 
 
