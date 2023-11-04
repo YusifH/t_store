@@ -40,4 +40,6 @@ class TTexts{
   /// Home App Bar
   static const String homeAppBarTitle = 'Good day for shopping';
   static const String homeAppBarSubtitle = 'Yusif Hajiyev';
+
+  static const String chairIcon = "assets/icons/chair.png";
 }
