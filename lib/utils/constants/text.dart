@@ -49,4 +49,11 @@ class TTexts{
   static const String banner2 = "assets/banners/banner2.webp";
   static const String banner3 = "assets/banners/banner3.webp";
 
+
+  static const String iphone1 = "assets/product/iphone1.png";
+  static const String iphone2 = "assets/product/iphone2.png";
+  static const String iphone3 = "assets/product/iphone3.png";
+
+
+
 }

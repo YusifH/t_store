@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/constants/sizes.dart';
+
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
     super.key,
@@ -9,7 +10,8 @@ class TRoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = true,
     this.onPressed,
-    this.borderRadius  = TSizes.md,
+    this.borderRadius = TSizes.md,
+    this.fit = BoxFit.cover, this.padding,
   });
 
   final double? width, height;
@@ -17,6 +19,8 @@ class TRoundedImage extends StatelessWidget {
   final bool applyImageRadius;
   final VoidCallback? onPressed;
   final double borderRadius;
+  final BoxFit? fit;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +29,14 @@ class TRoundedImage extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+        padding: padding,
+        decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
             borderRadius: BorderRadius.circular(borderRadius),
             child: Image(
               image: AssetImage(imageUrl),
-              fit: BoxFit.cover,
+              fit: fit,
             )),
       ),
     );

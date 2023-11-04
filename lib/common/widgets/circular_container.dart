@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CircularContainer extends StatelessWidget {
   const CircularContainer({
     super.key,
@@ -8,14 +9,16 @@ class CircularContainer extends StatelessWidget {
     this.margin,
     this.child,
     required this.backgroundColor,
+    this.padding,
   });
 
   final double? width;
   final double? height;
   final double? radius;
-  final EdgeInsets? margin;
   final Widget? child;
   final Color backgroundColor;
+  final EdgeInsets? padding;
+  final EdgeInsets? margin;
 
   @override
   Widget build(BuildContext context) {
