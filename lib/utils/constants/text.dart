@@ -41,5 +41,12 @@ class TTexts{
   static const String homeAppBarTitle = 'Good day for shopping';
   static const String homeAppBarSubtitle = 'Yusif Hajiyev';
 
+  /// Categories icon
   static const String chairIcon = "assets/icons/chair.png";
+
+  /// Carousel Slide image
+  static const String banner1 = "assets/banners/banner1.webp";
+  static const String banner2 = "assets/banners/banner2.webp";
+  static const String banner3 = "assets/banners/banner3.webp";
+
 }

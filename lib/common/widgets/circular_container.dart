@@ -5,7 +5,7 @@ class CircularContainer extends StatelessWidget {
     this.width = 400,
     this.height = 400,
     this.radius = 400,
-    this.padding = 0,
+    this.margin,
     this.child,
     required this.backgroundColor,
   });
@@ -13,13 +13,14 @@ class CircularContainer extends StatelessWidget {
   final double? width;
   final double? height;
   final double? radius;
-  final double? padding;
+  final EdgeInsets? margin;
   final Widget? child;
   final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       width: width,
       height: height,
       decoration: BoxDecoration(
