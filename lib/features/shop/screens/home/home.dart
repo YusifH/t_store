@@ -67,7 +67,10 @@ class HomePage extends StatelessWidget {
             ),
 
             /// Body Carousel Slider
-            const TPromoSlider()
+            const TPromoSlider(),
+
+            /// Body Popular product
+            
           ],
         ),
       ),
