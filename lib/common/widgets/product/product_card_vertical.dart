@@ -25,43 +25,58 @@ class TProductCardVertical extends StatelessWidget {
         children: [
           CircularContainer(
             height: 180,
-            padding: const EdgeInsets.all(TSizes.sm),
+            // padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.darkerGrey : TColors.light,
             child: Stack(
               children: [
                 /// Image
                 const TRoundedImage(
                   imageUrl: TTexts.iphone1,
-                  borderRadius: 25,
-                  fit: BoxFit.contain,
+                  // fit: BoxFit.cover,
                 ),
 
                 /// Sale Tag
                 Positioned(
                   top: 12,
-                  // left: 12,
+                  left: 5,
                   child: CircularContainer(
                     radius: TSizes.sm,
-                    width: 40,
-                    height: 20,
-                    padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
                     backgroundColor: TColors.secondary.withOpacity(0.8),
-                    child: Center(child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black),)),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: TSizes.sm, vertical: TSizes.xs),
+                    child: const Text('25%'),
                   ),
                 ),
+
                 /// Favorite Icon Button
                 Positioned(
-                  top: 4,
-                  right: 4,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: dark ? TColors.black.withOpacity(0.9) : TColors.white.withOpacity(0.9)
-                    ),
-                    child: IconButton(onPressed: (){}, icon: const Icon(Iconsax.heart5, color: Colors.red,)),
-                  ),
-                )
-
+                  top: 0,
+                  right: 0,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Iconsax.heart5,
+                        size: TSizes.lg,
+                        color: Colors.red,
+                      )),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems /2),
+          Padding(
+            padding: const EdgeInsets.only(left: TSizes.sm),
+            child: Column(
+              children: [
+                Text(
+                  'Iphone 14 PRO Max',
+                  style: Theme.of(context).textTheme.labelLarge,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  // maxLines: 2,
+                  textAlign: TextAlign.left,
+                ),
+                SizedBox(height: TSizes.spaceBtwItems /2),
               ],
             ),
           ),

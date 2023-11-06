@@ -20,7 +20,7 @@ class TRoundedImage extends StatelessWidget {
   final VoidCallback? onPressed;
   final double borderRadius;
   final BoxFit? fit;
-  final EdgeInsets? padding;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,7 @@ class TRoundedImage extends StatelessWidget {
         height: height,
         width: width,
         padding: padding,
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
             borderRadius: BorderRadius.circular(borderRadius),
             child: Image(
