@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/circular_container.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:t_store/features/shop/screens/home/widgets/product_card.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -67,12 +69,29 @@ class HomePage extends StatelessWidget {
             ),
 
             /// Body Carousel Slider
-            const TPromoSlider()
+            const TPromoSlider(),
+            const SizedBox(height: TSizes.spaceBtwSections),
+
+            /// Product Card
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const ProductCard(),
+                const ProductCard(),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const ProductCard(),
+                const ProductCard(),
+              ],
+            ),
+
           ],
         ),
       ),
     );
   }
 }
-
 
