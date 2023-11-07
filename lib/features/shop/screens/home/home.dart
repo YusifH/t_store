@@ -73,25 +73,23 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Product Card
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const ProductCard(),
-                const ProductCard(),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const ProductCard(),
-                const ProductCard(),
-              ],
-            ),
 
+            GridView.builder(
+              itemCount: 5,
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 12),
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: TSizes.gridViewSpacing,
+                  crossAxisSpacing: TSizes.gridViewSpacing,
+                  mainAxisExtent: 280),
+              itemBuilder: (_, index) => const ProductCard(),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

@@ -34,12 +34,12 @@ class ProductCard extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: TColors.grey.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(TSizes.sm)),
+                    borderRadius: BorderRadius.circular(TSizes.productImageRadius)),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(TSizes.productImageRadius),
                   child: const Image(
                     image: AssetImage(TTexts.iphone1),
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -105,33 +105,37 @@ class ProductCard extends StatelessWidget {
                     )
                   ],
                 ),
-                /// Price and Add Button
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '\$789',
-                      maxLines: 1,
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(
-                          color: TColors.dark,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(TSizes.productImageRadius),
-                              bottomRight: Radius.circular(
-                                  TSizes.productImageRadius))),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Iconsax.add,
-                            color: TColors.white,
-                          )),
-                    )
-                  ],
-                )
               ],
             ),
+          ),
+          const Spacer(),
+          /// Price and Add Button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: TSizes.sm),
+                child: Text(
+                  '\$789',
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+              Container(
+                decoration: const BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.productImageRadius),
+                        bottomRight: Radius.circular(
+                            TSizes.productImageRadius))),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Iconsax.add,
+                      color: TColors.white,
+                    )),
+              )
+            ],
           )
         ],
       ),
