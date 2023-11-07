@@ -9,7 +9,6 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text.dart';
 import '../../../../common/widgets/primary_header_container.dart';
-import '../../../../common/widgets/rounded_image.dart';
 import '../../../../common/widgets/search_container.dart';
 import '../../../../common/widgets/section_heading.dart';
 import '../../../../common/widgets/vertical_image_text.dart';

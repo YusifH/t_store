@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../utils/constants/colors.dart';
 class CircularContainer extends StatelessWidget {
   const CircularContainer({
     super.key,
@@ -24,6 +26,12 @@ class CircularContainer extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+              spreadRadius: 1,
+              blurRadius: 5,
+              color: TColors.darkerGrey)
+        ],
         borderRadius: BorderRadius.circular(radius!),
         color: backgroundColor,
       ),

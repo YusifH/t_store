@@ -5,7 +5,8 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text.dart';
 class ProductCard extends StatelessWidget {
-  const ProductCard({
+  const
+  ProductCard({
     super.key,
   });
 

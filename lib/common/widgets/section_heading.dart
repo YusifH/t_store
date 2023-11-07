@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+
 class TSectionHeader extends StatelessWidget {
   const TSectionHeader({
     super.key,
@@ -8,17 +9,20 @@ class TSectionHeader extends StatelessWidget {
     required this.title,
     this.buttonTitle = 'View All',
     this.onPressed,
+    this.padding =
+        const EdgeInsets.symmetric(horizontal: TSizes.spaceBtwSections),
   });
 
   final Color? textColor;
   final bool showActionButton;
   final String title, buttonTitle;
+  final EdgeInsetsGeometry padding;
   final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.spaceBtwSections),
+      padding: padding,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -32,7 +36,12 @@ class TSectionHeader extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           if (showActionButton)
-            TextButton(onPressed: onPressed, child: Text(buttonTitle))
+            TextButton(
+                onPressed: onPressed,
+                child: Text(
+                  buttonTitle,
+                  style: TextStyle(color: textColor),
+                ))
         ],
       ),
     );

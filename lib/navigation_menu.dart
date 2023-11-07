@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/features/shop/screens/home/home.dart';
+import 'package:t_store/features/shop/screens/store/store.dart';
 import 'package:t_store/utils/constants/helper_function.dart';
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -37,7 +38,7 @@ class NavigationController extends GetxController{
 
   final screens = [
     const HomePage(),
-    Container(color: Colors.red),
+    const StoreScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.orange),
   ];
