@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/utils/constants/colors.dart';
 
 import '../../utils/constants/sizes.dart';
+
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
     super.key,
@@ -9,14 +11,22 @@ class TRoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = true,
     this.onPressed,
-    this.borderRadius  = TSizes.md,
+    this.borderRadius = TSizes.md,
+    this.padding,
+    this.backGroundColor = TColors.grey,
+    this.fit = BoxFit.cover,
+    this.margin,
   });
 
   final double? width, height;
   final String imageUrl;
   final bool applyImageRadius;
+  final Color backGroundColor;
   final VoidCallback? onPressed;
   final double borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +35,18 @@ class TRoundedImage extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
-        child: ClipRRect(
+        padding: padding,
+        margin: margin,
+        decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
+            color: backGroundColor),
+        child: ClipRRect(
+            borderRadius: applyImageRadius
+                ? BorderRadius.circular(borderRadius)
+                : BorderRadius.zero,
             child: Image(
               image: AssetImage(imageUrl),
-              fit: BoxFit.cover,
+              fit: fit,
             )),
       ),
     );

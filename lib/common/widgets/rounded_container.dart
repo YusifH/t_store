@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../utils/constants/colors.dart';
 
-class CircularContainer extends StatelessWidget {
-  const CircularContainer({
+class RoundedContainer extends StatelessWidget {
+  const RoundedContainer({
     super.key,
-    this.width = 400,
-    this.height = 400,
-    this.radius = 400,
+    this.width,
+    this.height,
+    this.radius = TSizes.cardRadiusLg,
     this.margin,
     this.child,
-    required this.backgroundColor,
+    this.backgroundColor = TColors.white,
     this.showBorder = false,
     this.padding,
     this.borderColor = TColors.borderPrimary,
