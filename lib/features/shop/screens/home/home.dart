@@ -86,6 +86,7 @@ class HomePage extends StatelessWidget {
                   mainAxisExtent: 280),
               itemBuilder: (_, index) => const ProductCard(),
             ),
+            const SizedBox(height: TSizes.spaceBtwSections),
           ],
         ),
       ),

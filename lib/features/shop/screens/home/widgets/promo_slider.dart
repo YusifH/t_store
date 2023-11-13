@@ -22,9 +22,9 @@ class TPromoSlider extends StatelessWidget {
       children: [
         CarouselSlider(
           items: const [
-            TRoundedImage(imageUrl: TTexts.banner1),
-            TRoundedImage(imageUrl: TTexts.banner2,),
-            TRoundedImage(imageUrl: TTexts.banner3),
+            TRoundedImage(imageUrl: TTexts.banner1, fit: BoxFit.cover,width: double.infinity, margin: EdgeInsets.all(10),),
+            TRoundedImage(imageUrl: TTexts.banner2,fit: BoxFit.cover, width: double.infinity, margin: EdgeInsets.all(10),),
+            TRoundedImage(imageUrl: TTexts.banner3, fit: BoxFit.cover, width: double.infinity, margin: EdgeInsets.all(10),),
           ],
           options: CarouselOptions(
             viewportFraction: 1,
