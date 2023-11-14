@@ -1,56 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/utils/constants/images.dart';
 
-import '../../../../../utils/constants/colors.dart';
+import '../../../../../common/widgets/images/t_circular_image.dart';
+import '../../../../../common/widgets/rounded_container.dart';
+import '../../../../../common/widgets/text/t_brand_title_with_verifired_icon.dart';
 import '../../../../../utils/constants/sizes.dart';
-import '../../../../../utils/constants/text.dart';
-
-class BrandCard extends StatelessWidget {
-  const BrandCard({super.key});
-
+class TBrandCard extends StatelessWidget {
+  const TBrandCard({
+    super.key, required this.showBorder, this.onTap,
+  });
+final bool showBorder;
+final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        padding:  const EdgeInsets.all(TSizes.sm),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(16)),
-        child: Expanded(
-          child: Row(
-            children: [
-              const SizedBox(
-                width: 40,
-                child: Image(
-                  image: AssetImage(TImages.iphone1),
-                ),
-              ),
-              const SizedBox(width: TSizes.spaceBtwItems / 1.5),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: onTap,
+      child: RoundedContainer(
+        padding: const EdgeInsets.all(TSizes.sm),
+        showBorder: true,
+        backgroundColor: Colors.transparent,
+        child: Row(
+          children: [
+            /// Icon
+            const TCircularImage(
+              icon: Iconsax.airdrop,
+            ),
+            const SizedBox(
+                height: TSizes.spaceBtwItems / 2),
+            Expanded(
+              child: Column(
+                crossAxisAlignment:
+                CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Row(
-                    children: [
-                      Text('IPHONE'),
-                      Icon(
-                        Iconsax.verify5,
-                        color: TColors.primaryColor,
-                        size: 12,
-                      ),
-                    ],
-                  ),
+                  const TBrandTitleText(title: 'Iphone'),
                   Text(
-                    '152 Product',
+                    '256 products',
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelMedium,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodySmall,
                   )
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -14,6 +14,8 @@ import 'package:t_store/utils/constants/images.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text.dart';
 
+import '../../../../common/widgets/appbar/tabbar.dart';
+import '../../../../common/widgets/brands/brands_show_case.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
 import '../../../../common/widgets/product_title.dart';
 import '../../../../common/widgets/section_heading.dart';
@@ -23,101 +25,154 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(
-        title: Text(
-          'SHOP',
-          style: Theme.of(context).textTheme.headlineMedium,
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: TAppBar(
+          title: Text(
+            'SHOP',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          action: [
+            CartCounterIcon(onPressed: () {}),
+          ],
         ),
-        action: [
-          CartCounterIcon(onPressed: () {}),
-        ],
-      ),
-      body: NestedScrollView(
-        headerSliverBuilder: (_, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              automaticallyImplyLeading: false,
-              pinned: true,
-              floating: true,
-              backgroundColor: THelperFunctions.isDarkMode(context)
-                  ? TColors.black
-                  : TColors.white,
-              expandedHeight: 440,
-              flexibleSpace: Padding(
-                padding: const EdgeInsets.all(TSizes.sm),
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    /// Search Section
-                    const SizedBox(
-                      height: TSizes.spaceBtwItems,
-                    ),
-                    const TSearchContainer(
-                      text: '',
-                      showBorder: true,
-                      padding: EdgeInsets.zero,
-                    ),
-                    const SizedBox(
-                      height: TSizes.spaceBtwSections,
-                    ),
+        body: NestedScrollView(
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                pinned: true,
+                floating: true,
+                backgroundColor: THelperFunctions.isDarkMode(context)
+                    ? TColors.black
+                    : TColors.white,
+                expandedHeight: 460,
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(TSizes.md),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      /// Search Section
+                      const SizedBox(height: TSizes.spaceBtwItems),
+                      const TSearchContainer(
+                        text: 'Search in Store',
+                        showBorder: true,
+                        padding: EdgeInsets.zero,
+                      ),
+                      const SizedBox(
+                        height: TSizes.spaceBtwSections / 2,
+                      ),
 
-                    /// Featured Brands
-                    TSectionHeader(
-                      title: 'Featured brands',
-                      showActionButton: true,
-                      onPressed: () {},
-                      padding: EdgeInsets.zero,
+                      /// Featured Brands
+                      TSectionHeader(
+                        title: 'Featured brands',
+                        showActionButton: true,
+                        onPressed: () {},
+                        padding: EdgeInsets.zero,
+                      ),
+                      const SizedBox(height: TSizes.spaceBtwItems),
+
+                      /// Brands Grid
+                      TGridLayout(
+                          itemCount: 4,
+                          mainAxisExtent: 80,
+                          itemBuilder: (_, index) {
+                            return const TBrandCard(showBorder: true,);
+                          })
+                    ],
+                  ),
+                ),
+
+                /// Tabs
+                bottom: const TTabBar(
+                  tabs: [
+                    Tab(
+                      child: Text('Sports'),
                     ),
-                    const SizedBox(height: TSizes.spaceBtwItems / 2),
-                    TGridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          return GestureDetector(
-                            onTap: () {},
-                            child: RoundedContainer(
-                              padding: const EdgeInsets.all(TSizes.sm),
-                              showBorder: true,
-                              backgroundColor: Colors.transparent,
-                              child: Row(
-                                children: [
-                                  /// Icon
-                                  const TCircularImage(
-                                    icon: Iconsax.airdrop,
-                                  ),
-                                  const SizedBox(
-                                      height: TSizes.spaceBtwItems / 2),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const TBrandTitleText(title: 'Nike'),
-                                        Text(
-                                          '256 productsproductsproducts',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelMedium,
-                                          overflow: TextOverflow.ellipsis,
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          );
-                        })
+                    Tab(
+                      child: Text('Furniture'),
+                    ),
+                    Tab(
+                      child: Text('Electronics'),
+                    ),
+                    Tab(
+                      child: Text('Cosmetics'),
+                    ),
+                    Tab(
+                      child: Text('Clothes'),
+                    ),
+                  ],
+                ),
+              )
+            ];
+          },
+          body: const TabBarView(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TBrandShowcase(
+                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                    )
                   ],
                 ),
               ),
-            )
-          ];
-        },
-        body: Container(),
+              Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TBrandShowcase(
+                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TBrandShowcase(
+                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TBrandShowcase(
+                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TBrandShowcase(
+                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+
+
+
