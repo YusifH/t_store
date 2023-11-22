@@ -79,7 +79,9 @@ class StoreScreen extends StatelessWidget {
                           itemCount: 4,
                           mainAxisExtent: 80,
                           itemBuilder: (_, index) {
-                            return const TBrandCard(showBorder: true,);
+                            return const TBrandCard(
+                              showBorder: true,
+                            );
                           })
                     ],
                   ),
@@ -88,21 +90,11 @@ class StoreScreen extends StatelessWidget {
                 /// Tabs
                 bottom: const TTabBar(
                   tabs: [
-                    Tab(
-                      child: Text('Sports'),
-                    ),
-                    Tab(
-                      child: Text('Furniture'),
-                    ),
-                    Tab(
-                      child: Text('Electronics'),
-                    ),
-                    Tab(
-                      child: Text('Cosmetics'),
-                    ),
-                    Tab(
-                      child: Text('Clothes'),
-                    ),
+                    Tab(child: Text('Sports')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Cosmetics')),
+                    Tab(child: Text('Clothes')),
                   ],
                 ),
               )
@@ -116,7 +108,11 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// Brands
                     TBrandShowcase(
-                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                      images: [
+                        TImages.iphone1,
+                        TImages.iphone2,
+                        TImages.iphone3
+                      ],
                     )
                   ],
                 ),
@@ -127,7 +123,11 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// Brands
                     TBrandShowcase(
-                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                      images: [
+                        TImages.onBoardingImage1,
+                        TImages.onBoardingImage2,
+                        TImages.onBoardingImage3
+                      ],
                     )
                   ],
                 ),
@@ -138,7 +138,11 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// Brands
                     TBrandShowcase(
-                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                      images: [
+                        TImages.iphone1,
+                        TImages.iphone2,
+                        TImages.iphone3
+                      ],
                     )
                   ],
                 ),
@@ -149,7 +153,11 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// Brands
                     TBrandShowcase(
-                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                      images: [
+                        TImages.iphone1,
+                        TImages.iphone2,
+                        TImages.iphone3
+                      ],
                     )
                   ],
                 ),
@@ -160,7 +168,11 @@ class StoreScreen extends StatelessWidget {
                   children: [
                     /// Brands
                     TBrandShowcase(
-                      images: [TImages.iphone1, TImages.iphone2, TImages.iphone3],
+                      images: [
+                        TImages.iphone1,
+                        TImages.iphone2,
+                        TImages.iphone3
+                      ],
                     )
                   ],
                 ),
@@ -172,7 +184,3 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
