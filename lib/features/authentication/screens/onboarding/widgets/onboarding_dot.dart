@@ -16,7 +16,7 @@ class OnBoardingNavigation extends StatelessWidget {
     final controller = OnBoardingController.instance;
     final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
-        bottom: kBottomNavigationBarHeight,
+        top: kBottomNavigationBarHeight,
         left: TSizes.defaultSpace,
         child: SmoothPageIndicator(
           count: 3,
